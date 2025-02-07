@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Guess the number</h1>
+    <p>You have 5 attempts!</p>
+    <label for="fnum">Input a Number From 1 To 100</label>
+    <input type="number" name="fnum" id="fnum"><br><br>
+    <button onclick="check()">Submit</button>
+    <p id="demo">You are </p>
+    <p id="demo2"></p>
+</body>
+<script>
+    let z=5;
+    let x=Math.floor(Math.random()*100+1)
+    let y=document.getElementById("fnum").value;
+    function check() 
+    {
+    if(y>x){
+            z--;
+            document.getElememtById("demo").innerHTML="Lower You have "+z+" left";
+        }
+    else if(y<x){
+            z--;
+            document.getElementById("demo").innerHTML="Higher You have "+z+" left";
+        }
+    else{
+        document.getElementById("demo").innerHTML="Correct You guessed it right!";
+    }
+    if(z==0 &&y!=x){
+        document.getElementById("demo2").innerHTML="You lost the game. The number was "+x;
+        document.getElementById("fnum").disabled=true;
+        document.getElementId("button").innerHTML=true;
+    }
+
+    }
+    
+</script>
+</html>
