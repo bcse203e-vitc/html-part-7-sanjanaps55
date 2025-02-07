@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="div1">Enter the number for div1</label>
+    <input type="number" id="div1" name="div1"><br><br>
+    <label for="divw1" >Enter the word for div1</label>
+    <input type="text" id="divw1" name="divw1"><br><br>
+    <label for="div2">Enter the number for div2</label>
+    <input type="number" id="div2" name="div2"><br><br>
+    <label for="divw2">Enter the word for div2</label>
+    <input type="text" id="divw2" name="divw2"><br><br>
+    <label for="input1">Enter a value</label>
+    <input type="number" id="input1" name="input1"><br><br>
+    <button onclick="check()">Click Me!</button><br><br>
+    <p id="demo"></p>
+    
+</body>
+<script>
+   
+    function check(){
+        let x=parseInt(document.getElementById("div1").value);
+        let y=parseInt(document.getElementById("div2").value);
+        let x1=document.getElementById("divw1").value;
+        let y1=document.getElementById("divw2").value;
+        let n=parseInt(document.getElementById("input1").value);
+        if (isNaN(x) || isNaN(y) || isNaN(n)) {
+            document.getElementById("demo").innerHTML = "Please enter valid numbers.";
+            return;
+        }
+
+        
+        if(n%x==0 && n%y==0){
+            document.getElementById("demo").innerHTML=x1+" "+y1;
+        }
+        else if(n%y==0){
+            document.getElementById("demo").innerHTML=y1;
+        }
+        else if(n%x==0){
+            document.getElementById("demo").innerHTML=x1;
+        }
+        else{
+            document.getElementById("demo").innerHTML="Not divisible by anything";
+        }
+    }
+
+</script>
+</html>
