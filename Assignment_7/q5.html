@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="demo1">Enter a text</label>
+    <input type="text" id="demo1" name="demo1"><br><br>
+    <button onclick="check()" id="demo2">Enter</button><br><br>
+    <p id="demo3"></p>
+    <p id="demo4" style="background-color: aqua;"></p>
+</body>
+<script>
+    function check(){
+        let x=document.getElementById("demo1").value;
+        let n=x.length;
+        const text=x.split(" ");
+        let n2=text.length;
+        document.getElementById("demo3").innerHTML="The length of the String "+n
+        +"<br>"+"No of words is "+n2;
+        let text2="";
+        for(let i=0;i<n2;i++){
+            let c=0;
+            for(let j=i+1;j<n2-1;j++){
+                if(text[i]==text[j]){
+                    c++;
+                }
+            }
+            if(c>0){
+                text2+=text[i]+" ";
+            }
+        }
+        document.getElementById("demo4").innerHTML=text2.trim() || "No duplicates Found";
+        
+    }
+</script>
+</html>
