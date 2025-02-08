@@ -1,0 +1,29 @@
+.flexbox{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+
+
+
+}
+.button1{
+    background-color: red;
+    padding:20px;
+    font-size: 30px;;
+}
+.button2{
+    background-color: Green;
+    padding:20px;
+    font-size: 30px;
+
+}
+.button3{
+    background-color: blue;
+    padding:20px;
+    font-size: 30px;
+
+
+}
